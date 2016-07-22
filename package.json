@@ -1,0 +1,33 @@
+{
+  "name": "evernote-reminder",
+  "version": "0.0.0",
+  "description": "Simple desktop application created to remind about uncomplited tasks in Evernote",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegDokuka/EvernoteReminder.git"
+  },
+  "keywords": [
+    "Evernote",
+    "reminder",
+    "notification",
+    "electron",
+    "desktop"
+  ],
+  "author": "Oleh Dokuka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OlegDokuka/EvernoteReminder/issues"
+  },
+  "homepage": "https://github.com/OlegDokuka/EvernoteReminder#readme",
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "evernote": "^1.25.82"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.7"
+  }
+}

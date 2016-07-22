@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
+        "module": "commonjs",
+        "outDir": "./out"
+    },
+    
+    "exclude": [
+        "./node_modules/**",
+        "./typings/**"
+    ]
+}
