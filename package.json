@@ -28,6 +28,9 @@
     "evernote": "^1.25.82"
   },
   "devDependencies": {
-    "electron-prebuilt": "^1.2.7"
+    "electron-prebuilt": "latest",
+    "tslint": "latest",
+    "tslint-loader": "latest",
+    "ts-loader": "latest"
   }
 }
