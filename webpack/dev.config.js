@@ -2,18 +2,26 @@ var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var assetsPath = path.resolve(__dirname, '../static/dist');
+var TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+
 
 module.exports = {
-    entry: './src/index.ts',
+    target: 'electron',
+    entry: './src/app/index.ts',
     output: {
         path: assetsPath,
         filename: 'app.bundle.js',
+        sourceMapFilename: 'app.bundle.map'
     },
     module: {
         loaders: [
-            { test: /\.tsx?$/, exclude: /node_modules/, loaders: ['ts-loader', 'tslint'] }
+            { test: /\.tsx?$/, loaders: ['awesome-typescript-loader', 'tslint'] },
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            { test: /\.html$/, exclude: /node_modules/, loader: 'html-loader' },
+            { test: /\.json$/, loader: 'json-loader' }
         ]
     },
+    devtool: 'source-map',
     progress: true,
     resolve: {
         modulesDirectories: [
@@ -21,7 +29,10 @@ module.exports = {
             'node_modules',
             'bower_components'
         ],
-        extensions: ['', '.json', '.ts', '.tsx', '.js']
+        extensions: ['', '.ts', '.tsx', '.js'],
+        plugins: [
+            new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+        ]
     },
     tslint: {
         emitErrors: false,

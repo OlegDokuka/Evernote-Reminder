@@ -1,0 +1,26 @@
+<md-whiteframe layout="column" class="md-whiteframe-5dp">
+    <md-content>
+        <md-toolbar md-scroll-shrink ng-if="true">
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Login</span>
+                </h3>
+            </div>
+        </md-toolbar>
+        <form name="loginForm" layout-padding ng-submit="$ctrl.login()">
+            <md-input-container class="md-block">
+                <label>Token</label>
+                <input name="token" md-maxlength="300" required ng-model="$ctrl.token">
+
+                <div ng-messages="loginForm.username.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <div layout="row" layout-align="end center">
+                    <md-button type="submit" class="md-raised md-primary">Login</md-button>
+                </div>
+            </md-input-container>
+        </form>
+    </md-content>
+</md-whiteframe>
